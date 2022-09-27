@@ -3,6 +3,8 @@ import { bannerData } from '../../constant/data';
 import { makeStyles } from '@material-ui/core'
 import axios from 'axios'
 import React,{useState,useEffect } from 'react';
+import config from '../../config';
+
 
 let baseURL ="http://localhost:3010"
 
@@ -29,7 +31,7 @@ const Banner = () => {
 
   function getCategoriesData() {
     axios
-      .get(`http://localhost:3010/api/banner/banners`)
+      .get(`${config.BASE_URL}api/banner/banners`)
       .then(response => response.data)
       .then(data => {
         console.log("bannerdata", data);
@@ -61,7 +63,7 @@ const Banner = () => {
         >
             {
                 bannerData.map(image => (
-                    <img src={baseURL+image.url} className={classes.image} alt="" />
+                    <img src={config.BASE_URL+image.url} className={classes.image} alt="" />
                 ))
             }
         </Carousel>

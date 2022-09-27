@@ -14,8 +14,9 @@ import { useSelector, useDispatch } from 'react-redux'; // hooks
  
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange, deepPurple } from '@material-ui/core/colors';
+import config from '../../config';
 
-let baseURL ="http://localhost:3010"
+
 
 const responsive = {
     desktop: {
@@ -175,7 +176,7 @@ const MultiHealthConcenCategory = ({  timer, title }) => {
         // <Link to={`product/hi`} style={{textDecoration: 'none'}}>
                      <Box className={classes.container} onClick={()=>{history.push(`category/healthconcern`)}}>
     
-    <img src={baseURL+temp.url1} className={classes.image} alt="" />
+    <img src={config.BASE_URL+temp.url1} className={classes.image} alt="" />
 <Typography className={classes.text}>{temp.categoryName}</Typography>
 </Box>
         // </Link>
